@@ -11,4 +11,12 @@ class Maatkit <Formula
     system "perl Makefile.PL PREFIX=#{prefix}"
     system "make install"
   end
+
+  def caveats
+    <<-EOS
+Documentation is embedded in each program in POD, the Perl documentation
+format. To read the documentation, issue `perldoc <program>' where <program>
+is the Perl script itself.
+    EOS
+  end
 end
