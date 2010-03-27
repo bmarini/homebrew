@@ -21,7 +21,8 @@ class Cassandra <Formula
       s.gsub! "cassandra_home=`dirname $0`/..", "cassandra_home=#{prefix}"
     end
 
-    bin.install Dir["bin/{cassandra,cassandra-cli,cassandra.in.sh}"]
-    prefix.install Dir["*.txt"] + Dir["{conf,interface,javadoc,lib}"]
+    rm Dir["bin/*.bat"]
+    prefix.install Dir["*.txt"] + Dir["{bin,conf,interface,javadoc}"]
+    prefix.install Dir["lib/*.jar"]
   end
 end
